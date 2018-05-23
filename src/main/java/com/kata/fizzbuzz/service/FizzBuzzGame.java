@@ -32,9 +32,7 @@ public class FizzBuzzGame {
                         .orElse(new Integer(number).toString());
         }
 
-        private Optional<String> isFizz(int number) {
-                return Optional.ofNullable(number % 3 == 0 ? FIZZ : null);
-        }
+        private Optional<String> isFizz(int number) { return Optional.ofNullable(number % 3 == 0 ? FIZZ : null); }
 
         private Optional<String> isBuzz(int number) {
                 return Optional.ofNullable(number % 5 == 0 ? BUZZ : null);
