@@ -1,0 +1,27 @@
+*.idea
+*.idea/**
+*.iml
+*.ipr
+target
+.worksheet
+*.project
+*.classpath
+*.iws
+.settings
+**/.settings/**
+*.log
+*.log.gz
+bin
+**/test-output/**
+**/testResults/**
+**/application.pid
+**/application-local.*
+
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history
+
