@@ -11,9 +11,7 @@ before_install:
 - gcloud auth activate-service-account --key-file client-secret.json
 install:
 - gcloud config set compute/zone us-central1-b
-- gcloud config set project continuous-deployment-python
-- gcloud -q components update gae-python
-- pip install -r requirements.txt -t lib/
+- gcloud config set project restaurant-solidaire-backend
 script:
 - echo "success"
 
