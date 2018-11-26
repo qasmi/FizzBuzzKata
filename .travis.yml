@@ -7,6 +7,16 @@ language: java
 before_install:
 - openssl aes-256-cbc -K $encrypted_f774c86c0c1a_key -iv $encrypted_f774c86c0c1a_iv
   -in client-secret.json.enc -out client-secret.json -d
+- mkdir -p lib
+- gcloud auth activate-service-account --key-file client-secret.json
+install:
+- gcloud config set compute/zone us-central1-b
+- gcloud config set project continuous-deployment-python
+- gcloud -q components update gae-python
+- pip install -r requirements.txt -t lib/
+script:
+- echo "success"
+
 deploy:
   provider: gae
   project: restaurant-solidaire-backend
