@@ -1,23 +1,22 @@
 sudo: required
-
 services:
-  - docker
-
+- docker
 language: java
 before_install:
 - openssl aes-256-cbc -K $encrypted_f774c86c0c1a_key -iv $encrypted_f774c86c0c1a_iv
   -in client-secret.json.enc -out client-secret.json -d
+- openssl aes-256-cbc -K $encrypted_f774c86c0c1a_key -iv $encrypted_f774c86c0c1a_iv
+  -in restaurant-solidaire-backend-fcaf3e788582.json.enc -out ~\/T\él\échargements/restaurant-solidaire-backend-fcaf3e788582.json
+  -d
 - mkdir -p lib
 - gcloud auth activate-service-account --key-file client-secret.json
 install:
 - gcloud config set project restaurant-solidaire-backend
 script:
 - echo "success"
-
 deploy:
   provider: gae
   project: restaurant-solidaire-backend
   keyfile: client-secret.json
   verbosity: debug
   on: master
-
