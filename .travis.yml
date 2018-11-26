@@ -1,8 +1,10 @@
-language: java
-script: mvn clean verify
 sudo: required
+
 services:
-- docker
+  - docker
+
+language: java
+
 deploy:
   provider: gae
   project: restaurant-solidaire-backend
